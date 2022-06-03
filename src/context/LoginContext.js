@@ -35,6 +35,10 @@ export const LoginContextProvider = ({ children }) => {
         if (err.response.status === 405) {
           toast.error('Falha na comunicação com servidor!')
         }
+
+        if (err.response.status === 500) {
+          toast.error('Falha no servidor!')
+        }
       })
   }
 
