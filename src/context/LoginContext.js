@@ -25,11 +25,11 @@ export const LoginContextProvider = ({ children }) => {
       })
       .catch(err => {
         if (err.response.status === 422) {
-          toast.error('Senha Incorreta!')
+          toast.error('Ops! Verifique os dados!')
         }
 
         if (err.response.status === 404) {
-          toast.error('Usuário não encontrado!')
+          toast.error('Ops! Verifique os dados!')
         }
 
         if (err.response.status === 405) {
