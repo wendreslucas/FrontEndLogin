@@ -1,9 +1,9 @@
 import React, { createContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export const SettingContext = createContext()
+export const MenuContext = createContext()
 
-export function SettingContextProvider({ children }) {
+export function MenuContextProvider({ children }) {
   const navigate = useNavigate()
   //const { userName, setUserName } = useContext(UserContext)
   const [openMenuUser, setOpenMenuUser] = useState(false)
@@ -21,13 +21,13 @@ export function SettingContextProvider({ children }) {
   }
 
   return (
-    <SettingContext.Provider
+    <MenuContext.Provider
       value={{
         handleHome,
         handleLogout
       }}
     >
       {children}
-    </SettingContext.Provider>
+    </MenuContext.Provider>
   )
 }

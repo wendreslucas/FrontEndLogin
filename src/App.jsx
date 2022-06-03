@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.min.css'
 
 import { LoginContextProvider } from './context/LoginContext'
-import { SettingContextProvider } from './context/SettingContext'
+import { MenuContextProvider } from './context/MenuContext'
 
 import { PagesRoot } from './pages/Root'
 import { GlobalStyle } from './ui/GlobalStyle'
@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <StoreProvider>
-        <SettingContextProvider>
+        <MenuContextProvider>
           <RegisterContextProvider>
             <LoginContextProvider>
               <GlobalStyle />
@@ -23,7 +23,7 @@ function App() {
               <ToastContainer />
             </LoginContextProvider>
           </RegisterContextProvider>
-        </SettingContextProvider>
+        </MenuContextProvider>
       </StoreProvider>
     </BrowserRouter>
   )

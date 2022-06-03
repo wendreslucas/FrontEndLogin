@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import { SettingContext } from '../../context/SettingContext'
+import { MenuContext } from '../../context/MenuContext'
 import { Ancor } from './style'
 import { makeStyles } from '@material-ui/styles'
 
@@ -45,7 +45,7 @@ const Header = () => {
     handleLogout,
     handleProfile,
     handleAbout
-  } = useContext(SettingContext)
+  } = useContext(MenuContext)
 
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
