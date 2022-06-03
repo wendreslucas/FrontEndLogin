@@ -14,13 +14,14 @@ import InputUsername from '../Inputs/Username'
 import InputPassword from '../Inputs/Senha'
 import { IoClose } from 'react-icons/io5'
 import Logo from '../Logo'
-import { LoginContext } from '../../context/LoginContext'
+
 import { useForm, Controller } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { InputError } from '../Inputs/Error'
 import { toast } from 'react-toastify'
 import InputEmail from './../Inputs/Email/index'
+import { RegisterContext } from './../../context/RegisterContext'
 
 const validationSchema = yup.object({
   name: yup.string().required(),
@@ -32,7 +33,7 @@ const validationSchema = yup.object({
 export const AddUser = () => {
   const { register } = useForm()
   const navigate = useNavigate()
-  const { createUser } = React.useContext(LoginContext)
+  const { createUser } = React.useContext(RegisterContext)
 
   function handleClose() {
     navigate('/')

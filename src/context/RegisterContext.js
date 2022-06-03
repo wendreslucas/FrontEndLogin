@@ -8,28 +8,26 @@ export const RegisterContext = createContext()
 export const RegisterContextProvider = ({ children }) => {
   const navigate = useNavigate()
 
-  const createUser = (req, res) => {
-    api
-      .post('/user/register', {
-        name: req.name,
-        email: req.email,
-        password: req.password
-      })
-      .then(res => {
-        if (res.status === 201) {
-          toast.success('Usuário criado com sucesso!')
-          navigate('/')
-        }
-      })
-      .catch(err => {
-        if (err.response.status === 400) {
-          toast.error('Ops Email já existe!')
-        }
+  const createUser = async data => {
+    const user = {
+      name: data.name,
+      email: data.email,
+      password: data.password
+    }
+    try {
+      await api.post('/user/register', user)
+      toast.success('Usuário cadastrado com sucesso!')
 
-        if (err.response.status === 404) {
-          toast.error('Ops Username já existe!')
-        }
-      })
+      navigate('/')
+    } catch (err) {
+      if (err.response.status === 400) {
+        toast.error('Ops! E-mail já cadastrado!')
+      }
+
+      if (err.response.status === 404) {
+        toast.error('Ops! Username já existe')
+      }
+    }
   }
 
   return (
