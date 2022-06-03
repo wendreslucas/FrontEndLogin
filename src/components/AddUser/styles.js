@@ -14,21 +14,18 @@ export const DivHeader = styled.div`
   grid-template-columns: 25fr 0.2fr;
 
   .btn {
-    font-size: 0.8rem;
+    margin-right: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     border: none;
     background: transparent;
-    margin-top: -40px;
-    color: #36a9e0;
 
-    ${media.mobile} {
-      font-size: 0.8rem;
-    }
+    color: #36a9e0;
 
     &:hover {
       cursor: pointer;
-      opacity: 0.7;
+      opacity: 0.6;
     }
   }
 `
@@ -76,7 +73,7 @@ export const DivSpan = styled.div`
   a {
     /* color: #8c8080; */
     color: #36a9e0;
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
 
