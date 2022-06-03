@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from '../../ui/media'
 
 export const Container = styled.div`
   display: flex;
@@ -14,6 +15,10 @@ export const StyleForm = styled.form`
   height: 400px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+  ${media.mobile} {
+    width: 80%;
+  }
 `
 export const DivBtn = styled.div`
   height: 260px;
@@ -22,10 +27,18 @@ export const DivBtn = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
+  ${media.mobile} {
+    width: 80%;
+  }
 `
 
 export const DivInputs = styled.div`
   width: 270px;
+
+  ${media.mobile} {
+    width: 80%;
+  }
 `
 
 export const DivSpan = styled.div`
@@ -35,12 +48,16 @@ export const DivSpan = styled.div`
   width: 100%;
 
   .btn {
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     border: none;
     background: transparent;
     color: #36a9e0;
+
+    ${media.mobile} {
+      font-size: 0.8rem;
+    }
 
     /* visibility: ${props => (props.disabled ? 'hidden' : 'visible')}; */
 

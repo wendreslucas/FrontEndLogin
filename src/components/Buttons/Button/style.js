@@ -25,8 +25,7 @@ export const StyleButton = styled.button`
 
   ${media.mobile} {
     font-size: 14px;
-    margin-left: 25px;
-    margin-top: 0;
     width: 80%;
+    margin-top: 0;
   }
 `

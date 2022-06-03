@@ -1,13 +1,5 @@
 import styled from 'styled-components'
-
-export const Overlay = styled.div`
-  background: black;
-  box-shadow: 24px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-`
+import media from '../../ui/media'
 
 export const Container = styled.div`
   background: #fefefe;
@@ -16,18 +8,23 @@ export const Container = styled.div`
   justify-content: space-around;
   height: 100vh;
 `
+
 export const DivHeader = styled.div`
   display: grid;
   grid-template-columns: 25fr 0.2fr;
 
   .btn {
-    font-size: 15px;
+    font-size: 0.8rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     border: none;
     background: transparent;
     margin-top: -40px;
     color: #36a9e0;
+
+    ${media.mobile} {
+      font-size: 0.8rem;
+    }
 
     &:hover {
       cursor: pointer;
@@ -44,6 +41,10 @@ export const StyleForm = styled.form`
   height: 500px;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+
+  ${media.mobile} {
+    width: 80%;
+  }
 `
 export const DivBtn = styled.div`
   height: 100%;
@@ -52,9 +53,17 @@ export const DivBtn = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
+  ${media.mobile} {
+    width: 90%;
+  }
 `
 export const DivInputs = styled.div`
   width: 270px;
+
+  ${media.mobile} {
+    width: 80%;
+  }
 `
 
 export const DivSpan = styled.div`
