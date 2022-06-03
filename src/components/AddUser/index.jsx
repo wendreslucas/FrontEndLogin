@@ -8,7 +8,7 @@ import {
   DivInputs,
   DivSpan
 } from './styles'
-import Button from '../Buttons/Button'
+import Button from '../Button'
 import InputUsername from '../Inputs/Username'
 import InputPassword from '../Inputs/Senha'
 import { IoClose } from 'react-icons/io5'

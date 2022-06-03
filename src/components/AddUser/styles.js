@@ -15,7 +15,7 @@ export const DivHeader = styled.div`
 
   .btn {
     margin-right: 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     border: none;
@@ -71,7 +71,6 @@ export const DivSpan = styled.div`
   height: 40px;
 
   a {
-    /* color: #8c8080; */
     color: #36a9e0;
     font-size: 0.8rem;
     font-weight: bold;

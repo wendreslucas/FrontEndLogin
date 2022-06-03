@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '../../../ui/media'
+import media from '../../ui/media'
 
 export const StyleButton = styled.button`
   background: #36a9e0;
