@@ -31,6 +31,10 @@ export const LoginContextProvider = ({ children }) => {
         if (err.response.status === 404) {
           toast.error('Usuário não encontrado!')
         }
+
+        if (err.response.status === 405) {
+          toast.error('Falha na comunicação com servidor!')
+        }
       })
   }
 
