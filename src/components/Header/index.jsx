@@ -32,6 +32,10 @@ const useStyles = makeStyles({
     borderBottom: '1px solid #36A9E0'
   },
 
+  svgMenu: {
+    color: '#36A9E0'
+  },
+
   text: {
     color: '#8c8080'
   }
@@ -89,7 +93,7 @@ const Header = () => {
   return (
     <AppBar position="static">
       <Container className={classes.background} maxWidth="xl">
-        <Toolbar disableGutters className={classes.menu}>
+        <Toolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
@@ -115,7 +119,7 @@ const Header = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon className={classes.svgMenu} />
             </IconButton>
             <Menu
               id="menu-appbar"
