@@ -20,11 +20,17 @@ export function MenuContextProvider({ children }) {
     navigate('/')
   }
 
+  function handleAbout() {
+    window.open('https://github.com/wendreslucas', '_blank')
+  }
+
   return (
     <MenuContext.Provider
       value={{
         handleHome,
-        handleLogout
+        handleLogout,
+
+        handleAbout
       }}
     >
       {children}

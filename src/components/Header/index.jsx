@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { MenuContext } from '../../context/MenuContext'
 import { Ancor } from './style'
 import { makeStyles } from '@material-ui/styles'
+import { LoginContext } from './../../context/LoginContext'
 
 const useStyles = makeStyles({
   diplayMenu: {
@@ -37,13 +38,33 @@ const useStyles = makeStyles({
 })
 
 const Header = () => {
+  const { onSubmit } = useContext(LoginContext)
+  const [username, setUsername] = React.useState('')
+  const [openMenuUser, setOpenMenuUser] = useState(false)
+
+  function getUser() {
+    const token = localStorage.getItem('token', token)
+    const user = localStorage.getItem('user', user)
+
+    setUsername(user)
+  }
+
+  useEffect(() => {
+    getUser()
+  }, [])
+
+  function handleProfile() {
+    setOpenMenuUser(false)
+    window.open(`https://github.com/${username}`, '_blank')
+  }
+
   const classes = useStyles()
   const {
     handleNovoPost,
     handlePosts,
     handleHome,
     handleLogout,
-    handleProfile,
+
     handleAbout
   } = useContext(MenuContext)
 
@@ -164,7 +185,10 @@ const Header = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Usuario" />
+                <Avatar
+                  alt={username}
+                  src={`https://github.com/${username}.png`}
+                />
               </IconButton>
             </Tooltip>
             <Menu

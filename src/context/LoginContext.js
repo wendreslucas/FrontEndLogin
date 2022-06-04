@@ -8,18 +8,19 @@ export const LoginContext = createContext()
 export const LoginContextProvider = ({ children }) => {
   const navigate = useNavigate()
 
-  const onSubmit = (req, res) => {
+  async function onSubmit(req, res) {
     api
       .post('/user/authenticate', {
         name: req.name,
-        // email: req.email,
         password: req.password
       })
       .then(res => {
         localStorage.setItem('token', res.data.token)
+        localStorage.setItem('user', res.data.user.name)
         navigate('/home')
 
         if (res.status === 200) {
+          navigate('/home')
           toast.success('Login realizado com sucesso!')
         }
       })
