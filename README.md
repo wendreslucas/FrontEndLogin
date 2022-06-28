@@ -31,7 +31,7 @@ Others importants libs was used also:
 - Axios (to make requests to API);
 - React Router DOM v6;
 - React Icons;
-- React Sticky-Box;
+- Material Ui
 - Hook Form;
 - Yup
 
